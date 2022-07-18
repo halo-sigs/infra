@@ -1,0 +1,56 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: halo-server
+  namespace: halo-system
+  labels:
+    app: halo-server
+spec:
+  selector:
+    matchLabels:
+      app: halo-server
+  revisionHistoryLimit: 10
+  replicas: 1
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: halo-server
+    spec:
+      volumes:
+        - name: halo-storage
+          persistentVolumeClaim:
+            claimName: halo-pvc
+      containers:
+        - name: halo
+          image: "ghcr.io/halo-dev/halodev:next"
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: halo-server
+              containerPort: 8090
+              protocol: TCP
+          env:
+            - name: SPRING_PROFILES_ACTIVE
+              value: dev
+          volumeMounts:
+            - name: halo-storage
+              mountPath: /root/halo-next
+          livenessProbe:
+            httpGet:
+              host: localhost
+              path: /actuator/health
+              port: 8090
+              scheme: HTTP
+          readinessProbe:
+            httpGet:
+              host: localhost
+              path: /actuator/health
+              port: 8090
+              scheme: HTTP
+          startupProbe:
+            httpGet:
+              host: localhost
+              path: /actuator/health
+              port: 8090
+              scheme: HTTP
