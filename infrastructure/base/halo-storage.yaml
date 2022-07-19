@@ -4,11 +4,9 @@ metadata:
   name: halo-pvc
   namespace: halo-system
 spec:
-  storageClassName: "" # Empty string must be explicitly set otherwise default StorageClass will be set
-  volumeName: halo-pv
-  capacity:
-    storage: 512Mi
+  resources:
+    requests:
+      storage: 1Gi
   volumeMode: Filesystem
   accessModes:
     - ReadWriteOnce
-  persistentVolumeReclaimPolicy: Retain
