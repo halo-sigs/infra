@@ -2,5 +2,7 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namespace: halo-system
 resources:
-  - ./server
-  - ./admin
+  - namespace.yaml
+  - halo-pvc.yaml
+  - halo-config.yaml
+  - halo-server.yaml

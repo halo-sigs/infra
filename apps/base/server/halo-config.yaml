@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: halo-config
+  namespace: halo-system
+data:
+  halo.yaml: |
+    server:
+      port: 8090
+    halo:
+      security:
+        initializer:
+          super-admin-username: admin
+          super-admin-password: P@88w0rd
+    springdoc:
+      api-docs:
+        enabled: true
+      swagger-ui:
+        enabled: true
+      show-login-endpoint: false
+      show-actuator: false
+      use-management-port: false
+
+    management:
+      endpoints:
+        web:
+          exposure:
+            include: health,info,metrics,startup,shutdown
+      server:
+        port: 8090
