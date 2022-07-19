@@ -26,14 +26,15 @@ spec:
           configMap:
             name: halo-config
             items:
-              - key: halo.yaml
-                path: halo.yaml
+              - key: application.yaml
+                path: application.yaml
       containers:
         - name: halo
           image: "ghcr.io/halo-dev/halodev:next"
           imagePullPolicy: IfNotPresent
-          args:
-            - --spring.config.additional-location=optional:file:/etc/config/halo.yaml
+          env:
+            - name: SPRING_CONFIG_ADDITIONAL_LOCATION
+              value: optional:file:/etc/config/
           ports:
             - name: halo-port
               containerPort: 8090

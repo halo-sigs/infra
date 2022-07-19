@@ -4,9 +4,12 @@ metadata:
   name: halo-config
   namespace: halo-system
 data:
-  halo.yaml: |
+  application.yaml: |
     server:
       port: 8090
+    spring:
+      profiles:
+        active: dev
     halo:
       security:
         initializer:
