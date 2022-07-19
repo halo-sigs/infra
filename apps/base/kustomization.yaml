@@ -4,3 +4,4 @@ namespace: halo-system
 resources:
   - ./server
   - ./admin
+  - ingress.yaml
