@@ -5,4 +5,5 @@ resources:
   - namespace.yaml
   - halo-pvc.yaml
   - halo-config.yaml
+  - halo-server-service.yaml
   - halo-server.yaml
