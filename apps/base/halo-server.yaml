@@ -27,7 +27,7 @@ spec:
           image: "ghcr.io/halo-dev/halodev:next"
           imagePullPolicy: IfNotPresent
           ports:
-            - name: halo-server
+            - name: halo-port
               containerPort: 8090
               protocol: TCP
           env:
@@ -38,19 +38,13 @@ spec:
               mountPath: /root/halo-next
           livenessProbe:
             httpGet:
-              host: localhost
               path: /actuator/health
-              port: 8090
-              scheme: HTTP
+              port: halo-port
           readinessProbe:
             httpGet:
-              host: localhost
               path: /actuator/health
-              port: 8090
-              scheme: HTTP
+              port: halo-port
           startupProbe:
             httpGet:
-              host: localhost
               path: /actuator/health
-              port: 8090
-              scheme: HTTP
+              port: halo-port
