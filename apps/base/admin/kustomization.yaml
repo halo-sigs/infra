@@ -4,3 +4,5 @@ namespace: halo-system
 resources:
   - halo-admin-service.yaml
   - halo-admin.yaml
+  - halo-admin-ingress.yaml
+  - halo-admin-assets-ingress.yaml

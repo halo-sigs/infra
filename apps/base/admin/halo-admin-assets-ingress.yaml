@@ -1,0 +1,18 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: halo-admin-asssets-ingress
+  namespace: halo-system
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /assets
+spec:
+  rules:
+    - http:
+        paths:
+          - path: /assets
+            pathType: Prefix
+            backend:
+              service:
+                name: halo-admin-service
+                port:
+                  number: 8090

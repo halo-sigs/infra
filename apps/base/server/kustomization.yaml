@@ -7,3 +7,4 @@ resources:
   - halo-config.yaml
   - halo-server-service.yaml
   - halo-server.yaml
+  - halo-server-ingress.yaml
