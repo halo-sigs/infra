@@ -3,8 +3,6 @@ kind: Ingress
 metadata:
   name: halo-admin-asssets-ingress
   namespace: halo-system
-  annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /assets
 spec:
   rules:
     - http:
