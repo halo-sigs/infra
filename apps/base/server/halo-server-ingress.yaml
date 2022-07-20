@@ -3,11 +3,10 @@ kind: Ingress
 metadata:
   name: halo-server-ingress
   namespace: halo-system
-  annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-    - http:
+    - host: "next.ryanc.cc"
+      http:
         paths:
           - path: /
             pathType: Prefix
