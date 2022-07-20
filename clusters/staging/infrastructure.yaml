@@ -9,4 +9,5 @@ spec:
     kind: GitRepository
     name: flux-system
   path: ./infrastructure/staging
+  force: true
   prune: true
