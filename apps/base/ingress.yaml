@@ -16,6 +16,13 @@ spec:
                 name: halo-admin-service
                 port:
                   number: 8090
+          - path: /assets
+            pathType: Prefix
+            backend:
+              service:
+                name: halo-admin-service
+                port:
+                  number: 8090
           - path: /
             pathType: Prefix
             backend:
