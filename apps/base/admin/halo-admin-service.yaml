@@ -4,6 +4,7 @@ metadata:
   name: halo-admin-service
   namespace: halo-system
 spec:
+  type: ClusterIP
   selector:
     app: halo-admin
   ports:

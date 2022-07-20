@@ -4,6 +4,7 @@ metadata:
   name: halo-server-service
   namespace: halo-system
 spec:
+  type: ClusterIP
   selector:
     app: halo-server
   ports:
