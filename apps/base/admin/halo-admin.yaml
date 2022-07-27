@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: halo-admin
-          image: "ghcr.io/halo-dev/admin-dev:sha-7405b57"
+          image: "ghcr.io/halo-dev/admin-dev:sha-7bdbf25"
           imagePullPolicy: IfNotPresent
           ports:
             - name: halo-admin-port
