@@ -30,7 +30,7 @@ spec:
                 path: application.yaml
       containers:
         - name: halo
-          image: "halohub/halo-dev:sha-a0d55c5"
+          image: "halohub/halo-dev:sha-a39cf26"
           imagePullPolicy: IfNotPresent
           env:
             - name: SPRING_CONFIG_ADDITIONAL_LOCATION
