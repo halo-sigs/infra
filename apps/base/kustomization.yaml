@@ -3,4 +3,3 @@ kind: Kustomization
 namespace: halo-system
 resources:
   - ./server
-  - ./admin
